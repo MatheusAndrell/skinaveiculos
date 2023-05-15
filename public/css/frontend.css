@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap');
+@font-face {
+  font-family: 'TrebuchetMS';
+  src: url('/fonts/trebuc.woff2') format('woff2'),
+       url('../fonts/Trebuchet-MS-Italic.woff') format('woff')
+}
+
+/* @Default Styles
+
+Table of Content:
+01/ Variables,Global
+02/ Header Section
+03/ 
+04/ 
+05/ 
+06/ 
+07/ 
+08/ 
+09/ 
+10/ 
+11/ 
+12/ 
+13/ 
+14/ 
+15/ 
+16/ 
+17/ 
+18/ 
+19/ footer
+ 
+
+
+=====================================================================*/
+
+/*Variables*/
+
+/*----------------------------------------------------*/
+:root {
+  --cor-branca: #ffffff;
+  --cor-preta: #000000;
+  --cor-primaria: #ee0a0a;
+  --cor-secundaria: #a70b0b;
+  --quarta-cor: #600a0a;
+  --quinta-cor: #d12323;
+  --body-principal: #ffffff;
+  --cinza-body: rgb(241, 241, 241);
+  --cinza2-body: #464646;
+  --botom-color: #afafaf;
+
+  --buton-color1: #6d0f0f;
+  --buton-color2: #530e0e;
+  --buton-color3: #4b0b0b;
+  --buton-color4: #310707;
+  --buton-color5: #310707;
+
+}
+
+/* -----------------------------------------------
+
+    Global area 
+
+-------------------------------------------------*/
+
+
+body {
+  background-color: var(--cor-branca);
+  font-family: 'Merriweather', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ----------------------------------------------
+
+    Nav-bar
+
+------------------------------------------------*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 5%;
+  padding-right: 10%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: var(--cor-branca);
+}
+
+nav ul {
+  position: relative;
+  left: 100px;
+}
+
+.logo {
+  width: 30vh;
+  height: auto;
+}
+
+span {
+  color: var(--cor-primaria);
+}
+
+nav ul li {
+  list-style-type: none;
+  display: table-cell;
+  padding: 10px 20px;
+}
+
+nav ul li a {
+  color: var(--cinza2-body);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover {
+  color: var(--cor-primaria);
+  transition: .3s;
+}
+
+
+.atendimento {
+  background-image: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  padding: 10px 80px 10px 80px;
+  color: var(--cor-branca);
+  font-weight: 600;
+  font-size: 15px;
+  transition: .4s;
+  border: 1px solid var(--cor-primaria);
+  margin-left: 200px;
+  border-radius: 5px;
+}
+
+.atendimento:hover {
+  cursor: pointer;
+  background-color: var(--cinza-body);
+}
+
+.whatsapp {
+  margin-right: 10px;
+}
+
+/* ----------------------------------------------
+
+  Banner Section
+
+------------------------------------------------ */
+
+.banner {
+  background-image: url(/img/skina/banner.png);
+  background-size: cover;
+  width: 100%;
+  height: 70%;
+}
+
+.line {
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  height: 1vh;
+  position: relative;
+  top: 100%;
+}
+
+/* ----------------------------------------------
+
+    Card Cars
+
+------------------------------------------------*/
+.section-widget {
+  height: 180vh;
+  padding: 8vh 20vh 0 20vh;
+}
+
+.car-widget-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 60vh;
+}
+
+.car-widget {
+  width: 23%;
+  height: 80vh;
+  margin-bottom: 20px;
+  background-color: #eaeaea8a;
+  transition: all 0.5s ease;
+}
+
+.car-widget:hover {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.car-widget img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  transition: all 0.5s ease;
+}
+
+.car-widget img:hover {
+  filter: brightness(70%);
+}
+
+.car-widget h1 {
+  position: relative;
+  top: 5%;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--cor-preta);
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Trebuchet MS", Sans-serif;
+}
+
+.car-widget h2 {
+  position: relative;
+  top: 15%;
+  text-align: center;
+  color: var(--buton-color1);
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:  "Trebuchet MS", Sans-serif;
+}
+
+.car-widget p {
+  position: relative;
+  top: 10%;
+  color: black;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  font-family: "Trebuchet MS";
+}
+
+.car-widget h3 {
+  position: relative;
+  top: 17%;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Oswald", Sans-serif;
+}
+
+
+.car-line {
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  height: 1vh;
+}
+
+
+.more-cars-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 23%;
+  background-image: url('/img/cars/Siena.jpg');
+  background-size: cover;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  filter: brightness(50%);
+}
+
+.more-cars-btn span {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--cor-preta);
+  font-weight: 600;
+}
+
+.custom-arrow {
+  font-size: 80px;
+  margin-bottom: 20px;
+  color: var(--cor-secundaria);
+  transition: transform 0.3s ease;
+}
+
+.custom-arrow:hover {
+  transform: translateY(-10px);
+}
+
+/* ----------------------------------------------
+
+    news
+
+------------------------------------------------*/
+
+.news {
+  background-color: var(--cor-secundaria);
+  height: 100vh;
+}
+
+.text-news {
+  position: relative;
+  top: 40%;
+  margin-left: 10%;
+}
+
+.text-news h2 {
+  font-size: 48px;
+  font-weight: 600;
+  font-family: "Oswald", Sans-serif;
+  color: var(--cor-branca);
+}
+
+.text-news p {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Quattrocento Sans", Sans-serif;
+  margin-top: 10px;
+  color: var(--cor-branca);
+}
+
+.car-news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 30%;
+}
+
+.car-news {
+  width: 35vh;
+  height: 70vh;
+  background-color: #f6f6f6;
+  margin-right: 20px;
+  transition: all 0.5s ease;
+}
+
+.car-news:hover {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+.car-news img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  transition: all 0.5s ease;
+}
+
+.car-news img:hover {
+  filter: brightness(70%);
+}
+
+.car-news h1 {
+  position: relative;
+  top: 5%;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--cor-preta);
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Trebuchet MS", Sans-serif;
+}
+
+.car-news h2 {
+  position: relative;
+  top: 15%;
+  text-align: center;
+  color: var(--buton-color1);
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:  "Trebuchet MS", Sans-serif;
+}
+
+.car-news p {
+  position: relative;
+  top: 10%;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-family: "Quattrocento Sans", Sans-serif;
+}
+
+.car-news h3 {
+  position: relative;
+  top: 17%;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Oswald", Sans-serif;
+}
+
+
+.car-news hr {
+  border: none;
+  border-top: 6px solid var(--buton-color1);
+  margin: 0;
+}
+
+
+/* ----------------------------------------------
+
+    Testament Cards
+
+------------------------------------------------*/
+
+.testament {
+  height: 70vh;
+  background-color: white;
+}
+
+.testament h1 {
+  text-align: center;
+  align-items: center;
+  margin-top: 2%;
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 35px;
+  font-weight: 600;
+  font-family: "Trebuchet MS", Sans-serif;
+}
+
+.mySwiper {
+  margin-top: 5%;
+  height: 50%;
+
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: var(--buton-color1);
+  padding: 0 20px 0 20px;
+  margin: 0 20vh 0 20vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: var(--cor-branca);
+  font-size: 20px !important;
+}
+
+.swiper-slide {
+  position: relative;
+}
+
+.swiper-slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  max-width: 100%;
+  max-height: 100%;
+  transition: opacity 1s ease;
+}
+
+
+/* ----------------------------------------------
+
+    About Us Cards
+
+------------------------------------------------*/
+
+.aboutus {
+  height: 100vh;
+  background-color: var(--cor-secundaria);
+}
+
+.text-aboutus {
+  position: relative;
+  top: 10%;
+  margin-left: 20%;
+  margin-right: 50%;
+}
+
+.text-aboutus h1 {
+  color: white;
+  font-family: "Oswald", Sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.text-aboutus p {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  text-align: justify;
+  font-family: "Trebuchet MS", Sans-serif;
+  word-wrap: break-word;
+}
+
+.more-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 40%;
+  margin-top: 40px;
+  padding: 15px 0 15px 0;
+  width: 60%;
+  background-color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

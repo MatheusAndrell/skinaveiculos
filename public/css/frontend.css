@@ -140,7 +140,8 @@ nav ul li a:hover {
 
 .atendimento {
   background-image: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
-  padding: 10px 80px 10px 80px;
+  height: 50px;
+  width: 20%;
   color: var(--cor-branca);
   font-weight: 600;
   font-size: 15px;
@@ -259,7 +260,7 @@ nav ul li a:hover {
 
 .car-widget h3 {
   position: relative;
-  top: 17%;
+  top: 28%;
   text-align: center;
   color: black;
   font-size: 15px;
@@ -494,18 +495,32 @@ nav ul li a:hover {
 ------------------------------------------------*/
 
 .aboutus {
-  height: 100vh;
+  height: 80vh;
   background-color: var(--cor-secundaria);
 }
 
 .text-aboutus {
   position: relative;
   top: 10%;
-  margin-left: 20%;
-  margin-right: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.text-aboutus h1 {
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.text {
+  width: 35%;
+  margin-left: 10%;
+}
+
+.text h1 {
   color: white;
   font-family: "Oswald", Sans-serif;
   font-size: 48px;
@@ -513,9 +528,9 @@ nav ul li a:hover {
   margin-bottom: 40px;
 }
 
-.text-aboutus p {
+.text p {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 200;
   color: white;
   text-align: justify;
   font-family: "Trebuchet MS", Sans-serif;
@@ -528,14 +543,842 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-left: 40%;
   margin-top: 40px;
-  padding: 15px 0 15px 0;
-  width: 60%;
+  height: 60px;
+  width: 50%;
   background-color: white;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.more-infos i {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.map-container {
+  width: 50%;
+}
+
+.maps {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+/* ----------------------------------------------
+
+    Venda
+
+------------------------------------------------*/
+
+.venda {
+  height: 85vh;
+  background-color: var(--cor-branca);
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.text-venda {
+  margin: 4% 14% 0 2%;
+}
+
+.text-venda h1 {
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Oswald", Sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.text-venda p {
+  font-size: 20px;
+  font-weight: 200;
+  color: rgb(0, 0, 0);
+  text-align: initial;
+  font-family: "Trebuchet MS", Sans-serif;
+  word-wrap: break-word;
+}
+
+.more-infos-venda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+
+  height: 60px;
+  width: 50%;
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more-infos-venda span {
+  color: white;
+  font-weight: 600;
+}
+
+.more-infos-venda i {
+  color: white;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.image-container {
+  position: relative;
+  top: 80px;
+  left: 100px;
+  width: 100%;
+}
+
+.image {
+  width: 80%;
+  height: 450px;
+  object-fit: cover;
+  border: 0;
+  border-radius: 5px;
+}
+
+
+/* ----------------------------------------------
+
+    Compre Conosco
+
+------------------------------------------------*/
+
+.compre {
+  height: 30vh;
+  background: var(--cor-secundaria);
+}
+
+
+.compre h1 {
+  background: var(--cor-branca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Oswald", Sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 3% 0 0 0;
+  margin: 0px 51% 0 20%;
+}
+
+.more-infos-compre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -70px;
+  margin-left: 65%;
+  height: 60px;
+  width: 20%;
+  background: var(--cor-branca);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more-infos-compre span {
+  color: var(--cor-preta);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.more-infos-compre i {
+  color: var(--cor-preta);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* ----------------------------------------------
+
+    Filter Estoque
+
+------------------------------------------------*/
+
+.section-filtragem {
+  position: relative;
+  top: 390px;
+  margin: -200px 80px 0;
+}
+
+.filter {
+  padding: 0px;
+  display: table;
+}
+
+.item {
+  margin: 15px;
+}
+
+.item input {
+  padding: 10px 0px 10px 10px;
+  border-width: 1px 1px 1px 1px;
+  border-color: black;
+  width: 75%;
+  border-radius: 4px;
+}
+
+.item ::placeholder {
+ color: black; 
+}
+
+.item select {
+  padding: 10px 0px 10px 10px;
+  width: 100%;
+  border-radius: 4px;;
+  border-width: 1px 1px 1px 1px;
+  border-color: black;
+
+}
+
+.item button {
+  padding: 10px 15px 10px 15px;
+  border: none;
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.item button:hover {
+  filter: brightness(70%);
+}
+
+/* ----------------------------------------------
+
+    Card Cars Estoque
+
+------------------------------------------------*/
+.section-widget-estoque {
+  height: 180vh;
+  margin: 0vh 10vh 0 53vh;
+  position: relative;
+  z-index: 1;
+}
+
+.car-widget-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 60vh;
+}
+
+.car-widget-venda {
+  width: 23%;
+  height: 80vh;
+  margin-bottom: 20px;
+  background-color: #eaeaea8a;
+  transition: all 0.5s ease;
+}
+
+.car-widget-venda:hover {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.car-widget-venda img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  transition: all 0.5s ease;
+}
+
+.car-widget-venda img:hover {
+  filter: brightness(70%);
+}
+
+.car-widget-venda h1 {
+  position: relative;
+  top: 5%;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--cor-preta);
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Trebuchet MS", Sans-serif;
+}
+
+.car-widget-venda h2 {
+  position: relative;
+  top: 15%;
+  text-align: center;
+  color: var(--buton-color1);
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:  "Trebuchet MS", Sans-serif;
+}
+
+.car-widget-venda p {
+  position: relative;
+  top: 10%;
+  color: black;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  font-family: "Trebuchet MS";
+}
+
+.car-widget-venda h3 {
+  position: relative;
+  top: 34%;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Oswald", Sans-serif;
+}
+
+.car-line {
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  height: 1vh;
+}
+/* ----------------------------------------------
+
+    Compre Conosco
+
+------------------------------------------------*/
+
+.compre-estoque {
+  position: relative;
+  top: 70%;
+  height: 30vh;
+  background: var(--cor-secundaria);
+}
+
+
+.compre-estoque h1 {
+  background: var(--cor-branca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Oswald", Sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 3% 0 0 0;
+  margin: 0px 51% 0 20%;
+}
+
+.more-infos-compre-estoque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -70px;
+  margin-left: 65%;
+  height: 60px;
+  width: 20%;
+  background: var(--cor-branca);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more-infos-compre-estoque span {
+  color: var(--cor-preta);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.more-infos-compre-estoque i {
+  color: var(--cor-preta);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+/* ----------------------------------------------
+
+    Slide
+
+------------------------------------------------*/
+.image-section {
+  display: flex;
+  position: relative;
+  top: 14%;
+  height: 50%;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  background-color: red;
+}
+
+/* ----------------------------------------------
+
+    infos
+
+------------------------------------------------*/
+.widget-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250vh;
+  background-color: #e4e4e4;
+}
+
+.widget-1 {
+  border-radius: 10px;
+  width: 50%;
+  height: 240vh;
+  background-color: var(--cor-branca);
+  padding: 20px;
+  margin: 10px;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.widget-2 {
+  border-radius: 10px;
+  width: 300px;
+  height: 240vh;
+  background-color: var(--cor-primaria);
+  padding: 20px;
+  margin: 10px;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.widget-2 h2 {
+  margin-top: 30px;
+  color: var(--buton-color1);
+  background: var(--cor-branca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:  "Oswald", Sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.atendimento-whatsapp {
+  background-image: var(--cor-branca);
+  height: 50px;
+  width: 100%;
+  color: var(--cor-preta);
+  font-weight: 600;
+  font-size: 15px;
+  transition: .4s;
+  border: 1px solid var(--cor-primaria);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.atendimento-whatsapp:hover {
+  cursor: pointer;
+  background-color: var(--cinza-body);
+}
+
+
+.logocar {
+  display: flex;
+  padding: 20px;
+}
+
+.logocar img{
+  margin-right: 5%;
+  width: 15%;
+  height: 100px;
+  background-color: red;
+}
+
+.logo-info {
+  padding: 10px;
+  display: table;
+}
+
+.logo-info h3 {
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.logo-info p {
+  color: black;
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 600;
+}
+
+.info-widget {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.info-widget h2 {
+  color: black;
+  font-family: "Quattrocento Sans", Sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.info-widget p {
+  color: black;
+  font-family: "Quattrocento Sans", Sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: left;
+}
+
+.line-widget span {
+  color: black;
+  font-family: "Trebuchet MS", Sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  max-width: 95%;
+  font-weight: 600;
+}
+
+.line-widget {
+  display: flex;
+  align-items: center;
+}
+
+.line-widget:after {
+  content: "";
+  flex-grow: 1;
+  height: 2px;
+  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
+  margin-left: 10px;
+}
+
+.itens-veiculo{
+  margin-top: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.itens-veiculo p {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  font-family: "Quattrocento Sans", Sans-serif;
+}
+
+.check {
+  margin-right: 10px;
+  color: var(--buton-color1);
+}
+
+.sobre-veiculo {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.sobre-veiculo p {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  font-family: "Quattrocento Sans", Sans-serif;
+}
+
+.line-widget-2 {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.line-widget-2:after {
+  content: "";
+  flex-grow: 1;
+  height: 2px;
+  background: var(--cor-branca);
+  margin-left: 10px;
+}
+
+.line-widget-2 span {
+  color: black;
+  font-family: "Oswald", Sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card-veiculos {
+  margin-top: 20px;
+  background-color: var(--cor-secundaria);
+  width: 100%;
+  height: 8%;
+  
+}
+
+.logo-card {
+  padding: 10px;
+  display: flex;
+}
+
+.logo-card img {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  margin-right: 4%;
+}
+
+
+.info-card {
+  margin-top: 10px;
+  padding: 10px;
+  display: table;
+}
+
+.info-card h3 {
+  font-family: "Oswald", Sans-serif;
+  font-weight: 600;
+  color: var(--buton-color1);
+  background: var(--cor-branca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+}
+
+.info-card p {
+  color: var(--cor-preta);
+  font-family: "Oswald", Sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.info-card h2 {
+  color: var(--buton-color1);
+  background: var(--cor-branca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:  "Oswald", Sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  margin: 0;
+}
+
+
+/* ----------------------------------------------
+
+    Compre Veiculo
+
+------------------------------------------------*/
+
+.compre-veiculo {
+  height: 30vh;
+  background: var(--cor-secundaria);
+}
+
+
+.compre-veiculo h1 {
+  background: var(--cor-branca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Oswald", Sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 3% 0 0 0;
+  margin: 0px 51% 0 20%;
+}
+
+.more-infos-compre-veiculo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -70px;
+  margin-left: 65%;
+  height: 60px;
+  width: 20%;
+  background: var(--cor-branca);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more-infos-compre-veiculo span {
+  color: var(--cor-preta);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.more-infos-compre-veiculo i {
+  color: var(--cor-preta);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+/* ----------------------------------------------
+
+    Footer
+
+------------------------------------------------*/
+.footer {
+position: relative;
+top: 70%;
+}
+
+.footer-galaxy {
+  width: 100%;
+  color: #ffffff;
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+#footer_content {
+  background-color: rgb(18, 18, 18);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 3rem 3.5rem;
+}
+
+#footer_contacts h1 {
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+#footer_contacts p {
+  color: white;
+}
+
+#footer_social_media {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+#footer_social_media .footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: #ffffff;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+#footer_social_media .footer-link i {
+  font-size: 1.25rem;
+}
+
+#footer_social_media .footer-link:hover {
+  opacity: 0.8;
+}
+
+#instagram {
+  background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+  background-color: #4267b3;
+}
+
+#whatsapp {
+  background-color: #25d366;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  color: white;
+}
+
+.footer-list .footer-link {
+  color: #a8a29e;
+  transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+  color: var(--buton-color1);
+}
+
+#footer_subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: white;
+}
+
+#footer_subscribe p {
+  color: #a8a29e;
+}
+
+#input_group {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+#input_group input {
+  all: unset;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+#input_group button {
+  background-color: var(--buton-color1);
+  border: none;
+  color: #ffffff;
+  padding: 0px 1.25rem;
+  font-size: 1.125rem;
+  height: 100%;
+  border-radius: 0px 4px 0px 0px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#input_group button:hover {
+  opacity: 0.8;
+}
+
+#footer_copyright {
+  display: flex;
+  justify-content: center;
+  background-color: #181818;
+  font-size: 0.9rem;
+  padding: 1.0rem;
+  font-weight: 100;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  #footer_content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  #footer_content {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 3rem 2rem;
+  }
 }
 

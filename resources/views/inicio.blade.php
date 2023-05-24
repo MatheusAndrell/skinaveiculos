@@ -1,5 +1,6 @@
 @section('title', 'Skina Veiculos')
 
+
 <!-- ===========================================
     Start Navbar -->
 @extends('layouts.navbar')
@@ -22,11 +23,9 @@
 <!-- ===========================================
     Start Content -->
 <section class="section-widget">
-
     <div class="car-widget-container">
-
         <div class="car-widget">
-            <a href="caminho/para/carro1">
+            <a href="{{ ('veiculo') }}">
                 <img src="/img/cars/UnoEconomy.jpg" alt="Carro 1">
                 <div class="car-line"></div>
                 <h1>Fiat UNO </h1>
@@ -228,19 +227,143 @@
         Start About us-->
 <section class="aboutus">
     <div class="text-aboutus">
-        <h1>Quem Somos</h1>
-        <p>A Delta surgiu de um sonho de criança, que foi construído com muita persistência e concretizado com o apoio
-            da esposa, filhos e toda a equipe Delta, que são uma família, e por isso, o nosso maior combustível é
-            realizar sonhos em forma de carros!</p>
+        <div class="content">
+            <div class="text">
+                <h1>Quem Somos</h1>
+                <p>A Skina Veiculos surgiu de um sonho de criança, que foi construído com muita persistência e
+                    concretizado com o apoio
+                    da esposa, filhos e toda a equipe Delta, que são uma família, e por isso, o nosso maior combustível
+                    é
+                    realizar sonhos em forma de carros!</p>
 
-        <button class="more-infos"><span>Saiba mais<i class="fa-solid fa-chevron-right"></i></span>
-        </button>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!4v1684166351343!6m8!1m7!1s_QdceF4cdKSzqLm-hWJ97g!2m2!1d-21.36724929308763!2d-45.51000847442862!3f124.24780130539918!4f-13.702057654757681!5f0.7820865974627469"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <button class="more-infos"><span>Saiba mais<i class="fa-solid fa-chevron-right"></i></span></button>
+            </div>
+            <div class="map-container">
+                <iframe class="maps"
+                    src="https://www.google.com/maps/embed?pb=!4v1684190438840!6m8!1m7!1s8-r2QcSw5PhbhbElfVKA7Q!2m2!1d-21.36726905910468!2d-45.50984525742897!3f244.01803130009793!4f-4.323649900489144!5f0.4000000000000002"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
 </section>
 
 
 <!-- ===========================================
         Final About us-->
+
+
+<!-- ===========================================
+        Start venda seu carro-->
+
+<section class="venda">
+    <div class="text-venda">
+        <div class="content-venda">
+            <div class="text-venda">
+                <h1>VENDA SEU CARRO DE FORMA RÁPIDA.</h1>
+                <p>Receba uma proposta da nossa equipe em seu carro.
+                    Analisamos seu usado em minutos com a melhor avaliação do mercado.</p>
+                <button class="more-infos-venda"><span>Saiba mais<i class="fa-solid fa-car"></i></span></button>
+            </div>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="image" src="/img/cars/rallye.jpg" alt="Imagem">
+    </div>
+</section>
+
+
+<!-- ===========================================
+        End venda seu carro-->
+
+<!-- ===========================================
+        Start Compre Conosco-->
+
+        <section class="compre">
+            <div>
+                <h1>Agora que já nos conhece vamos fazer negócio?</h1>
+            </div>
+                <button class="more-infos-compre"><i class="fa-brands fa-whatsapp"></i><span>Negociar pelo Whatsapp</span></button>
+        </section>
+
+<!-- ===========================================
+        End Compre Conosco-->
+
+<!-- ===========================================
+        Start Footer-->
+
+        <footer class="galaxy-footer">
+            <div id="footer_content">
+                <div id="footer_contacts">
+                    <h1>Skina Veiculos</h1>
+                    <p>It's all about your dreams.</p>
+        
+                    <div id="footer_social_media">
+                        <a href="#" class="footer-link" id="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+        
+                        <a href="#" class="footer-link" id="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+        
+                        <a href="#" class="footer-link" id="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <ul class="footer-list">
+                    <li>
+                        <h3>Blog</h3>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Tech</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Adventures</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Music</a>
+                    </li>
+                </ul>
+        
+                <ul class="footer-list">
+                    <li>
+                        <h3>Products</h3>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">App</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Desktop</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Cloud</a>
+                    </li>
+                </ul>
+        
+                <div id="footer_subscribe">
+                    <h3>Subscribe</h3>
+        
+                    <p>
+                        Enter your e-mail to get notified about
+                        our news solutions
+                    </p>
+        
+                    <div id="input_group">
+                        <input type="email" id="email">
+                        <button>
+                            <i class="fas fa-mail-bulk"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="footer_copyright">
+                &#169
+                2023 Todos os Direitos Reservados
+            </div>
+        </footer>
+<!-- ===========================================
+        End Footer-->

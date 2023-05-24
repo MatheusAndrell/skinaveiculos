@@ -33,3 +33,9 @@ Route::get('/sobre-nos', function () {
 Route::get('/contato', function () {
     return view('contato');
 })->name('contato');
+
+
+Route::get('/veiculo', function () {
+    return view('veiculo');
+})->name('veiculo');
+

@@ -88,8 +88,8 @@ a {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-nav {
-  position: fixed;
+.nav-bar {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -105,7 +105,7 @@ nav {
   background-color: var(--cor-branca);
 }
 
-nav ul {
+.nav-bar ul {
   position: relative;
   left: 100px;
 }
@@ -119,20 +119,20 @@ span {
   color: var(--cor-primaria);
 }
 
-nav ul li {
+.nav-bar ul li {
   list-style-type: none;
   display: table-cell;
   padding: 10px 20px;
 }
 
-nav ul li a {
+.nav-bar ul li a {
   color: var(--cinza2-body);
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-nav ul li a:hover {
+.nav-bar ul li a:hover {
   color: var(--cor-primaria);
   transition: .3s;
 }
@@ -160,6 +160,96 @@ nav ul li a:hover {
   margin-right: 10px;
 }
 
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .nav-bar {
+      padding-top: 20px;
+      padding-bottom: 60px;
+      box-shadow: none;
+      position: absolute;
+  }
+
+  .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--cor-branca);
+      padding: 10px 0;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  
+  .nav-menu li {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      
+  }
+
+  .nav-bar .menu-toggle {
+      display: none;
+  }
+
+  .menu-icon {
+      display: block;
+      position: absolute;
+      top: 110px;
+      right: 30px;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      
+  }
+
+  .menu-icon span {
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: var(--cor-primaria);
+      margin-bottom: 6px;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .menu-icon:hover span {
+      background-color: var(--cor-primaria);
+  }
+
+  .menu-toggle:checked ~ .nav-menu {
+      display: grid;
+      box-shadow: none;
+  }
+
+  .nav-bar ul {
+    position: absolute;
+    left: 0;
+  }
+
+  .logo {
+    width: 50vh;
+    height: auto;
+    padding: 30px 0 0 0;  
+  }
+
+  .atendimento {
+    display: flex;
+    align-items: center; 
+    margin: 0;
+    position: relative;
+    right: 300px;
+    top: 65px;
+    padding: 0 172px 0px 59px;
+  }
+
+  .atendimento i {
+    margin-right: 5px;
+  }
+}
+
+
 /* ----------------------------------------------
 
   Banner Section
@@ -171,6 +261,7 @@ nav ul li a:hover {
   background-size: cover;
   width: 100%;
   height: 70%;
+
 }
 
 .line {
@@ -178,6 +269,16 @@ nav ul li a:hover {
   height: 1vh;
   position: relative;
   top: 100%;
+}
+
+@media (max-width: 991px) {
+  .banner {
+    display: none;
+  }
+
+  .banner-section {
+    height: 30%;
+  }
 }
 
 /* ----------------------------------------------
@@ -311,15 +412,30 @@ nav ul li a:hover {
   transform: translateY(-10px);
 }
 
+@media (max-width: 991px) {
+  .car-widget {
+    width: 100%;
+  }
+  
+  .section-widget {
+    height: 630vh;
+    padding: 8vh 8vh 0 8vh;
+  }
+
+  .more-cars-btn {
+    width: 100%;
+  }
+}
 /* ----------------------------------------------
 
     news
 
 ------------------------------------------------*/
-
 .news {
   background-color: var(--cor-secundaria);
   height: 100vh;
+  overflow: hidden; 
+  position: relative;
 }
 
 .text-news {
@@ -345,9 +461,10 @@ nav ul li a:hover {
 
 .car-news-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap; 
+  justify-content: flex-start; 
   margin-left: 30%;
+  transition: transform 0.5s ease; 
 }
 
 .car-news {
@@ -355,14 +472,20 @@ nav ul li a:hover {
   height: 70vh;
   background-color: #f6f6f6;
   margin-right: 20px;
-  transition: all 0.5s ease;
+  flex-shrink: 0;
 }
 
-.car-news:hover {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+.hide-slide {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
+.show-slide {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .car-news img {
   width: 100%;
@@ -421,13 +544,61 @@ nav ul li a:hover {
   font-family: "Oswald", Sans-serif;
 }
 
-
 .car-news hr {
   border: none;
   border-top: 6px solid var(--buton-color1);
   margin: 0;
 }
 
+.buttons-widget {
+  display: none;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--cor-branca);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  color: #ccc;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+@media (max-width: 991px) {
+  .text-news {
+    top: 0;
+  }
+  .car-news-container {
+    margin-left: 9%;
+  }
+
+  .buttons-widget {
+    display: block; 
+    font-size: 20px;
+  }
+
+  .news {
+    padding: 50px;
+  }
+}
 
 /* ----------------------------------------------
 
@@ -487,7 +658,13 @@ nav ul li a:hover {
   transition: opacity 1s ease;
 }
 
-
+@media (max-width: 991px) { 
+  .next-button,
+  .prev-button {
+    top: 34vh !important;
+    margin: 23px;
+  }
+}
 /* ----------------------------------------------
 
     About Us Cards
@@ -558,6 +735,11 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
+.more-infos span {
+  color: black;
+  font-weight: 600;
+}
+
 .map-container {
   width: 50%;
 }
@@ -566,6 +748,27 @@ nav ul li a:hover {
   width: 100%;
   height: 450px;
   border: 0;
+}
+
+@media (max-width: 991px) { 
+  .maps {
+    display: none;
+  }
+
+  .text {
+    width: auto;
+  }
+
+  .more-infos {
+    width: 100%;
+  }
+
+
+
+  .map-container {
+    width: 0;
+    display: none;
+  }
 }
 
 /* ----------------------------------------------
@@ -612,7 +815,6 @@ nav ul li a:hover {
   justify-content: center;
   text-align: center;
   margin-top: 30px;
-
   height: 60px;
   width: 50%;
   background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
@@ -648,6 +850,35 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
+@media (max-width: 991px) { 
+  .venda {
+    height: 150vh;
+    display: grid;
+    }
+
+    .image {
+      width: 56vh;
+      border-radius: inherit;
+      bottom: 79vh;
+      position: relative;
+    }
+
+    .image-container {
+      top: 0; 
+      left: 0;
+    }
+
+    .text-venda {
+      margin: 0;
+      position: relative;
+      top: 240px;
+      padding: 0 20px 0 20px;
+    }
+    
+    .more-infos-venda {
+      width: 100%;
+    }
+}
 
 /* ----------------------------------------------
 
@@ -699,6 +930,21 @@ nav ul li a:hover {
   color: var(--cor-preta);
   font-weight: bold;
   margin-right: 10px;
+}
+
+@media (max-width: 991px) {
+   
+  .compre h1 {
+    margin: 0px 1% 0 1%;
+  }
+  
+  .more-infos-compre {
+    margin-top: 10px;
+    margin-left: 5%;
+    width: 90%;
+    
+  }
+
 }
 
 /* ----------------------------------------------
@@ -1228,6 +1474,215 @@ nav ul li a:hover {
   margin-right: 10px;
 }
 
+/* ----------------------------------------------
+
+    Contactus
+
+------------------------------------------------*/
+.contato {
+  margin-top: 100px;
+  background-color: cyan;
+}
+
+.contactUs {
+  position: relative;
+  width: 100%;
+  padding: 40px 100px;
+}
+
+.contacUs .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+.contactUs .title h2 {
+  color: white;
+  font-weight: 500;
+}
+
+.box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 5fr 4fr;
+  grid-template-areas: 
+  "form info"
+  "form map";
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+.form {
+  grid-area: form;
+}
+
+.info {
+  grid-area: info;
+}
+
+.map {
+  grid-area: map;
+}
+
+.contact {
+  padding: 40px;
+  background-color: white;
+  box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+}
+
+.contact h3 {
+  color: black;
+  font-weight: 500;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+/* form */
+.formbox {
+  position: relative;
+  width: 100%;
+}
+.formbox .row50 {
+  display: flex;
+  gap: 20px; 
+}
+
+.inputbox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.formbox .row100 .inputbox {
+  width: 100%;
+}
+
+.inputbox span {
+  color: green;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.inputbox input {
+  padding: 10px;
+  font-size: 1.1em;
+  outline: none;
+  border: 1px solid black;
+}
+
+.inputbox textarea {
+  padding: 10px;
+  font-size: 1.1em;
+  outline: none;
+  border: 1px solid black;
+  resize: none;
+  min-height: 220px;
+  margin-bottom: 10px;
+}
+
+.inputbox input[type="submit"] {
+  background-color: #4b0b0b;
+  color: white;
+  border: none;
+  font-size: 1.1em;
+  max-width: 120px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 14px 15px;
+}
+
+.inputbox ::placeholder {
+  color: gray;
+}
+
+/* info */
+.info {
+  background: red;
+}
+
+.info h3 {
+  color: white;
+}
+
+.info .infobox div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info .infobox div span {
+  min-width: 40px;
+  height: 40px;
+  color: white;
+  background-color: #25d366;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  border-radius: 50%;
+  margin-right: 15px;
+  display: flex;
+}
+
+.info .infobox div p {
+  color: white;
+  font-size: 1.1em;
+}
+
+.info .infobox div a {
+  color: white;
+  text-decoration: none; 
+  font-size: 1.1em;
+}
+
+.sci {
+  margin-top: 40px;
+  display: flex;
+}
+
+.sci li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+.sci li a {
+  font-size: 2em;
+  color: #ccc;
+}
+
+.sci li a:hover {
+  color: #fff;
+}
+
+/* responsive */
+
+@media (max-width: 991px) {
+  .contato {
+    margin-top: 60px;
+  }
+
+  .inputbox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .formbox .row50 {
+    display: block;
+  }
+
+  .box {
+    display: block;
+  }
+
+  .contactUs {
+    padding: 0;
+  }
+}
 
 /* ----------------------------------------------
 
@@ -1340,6 +1795,7 @@ top: 70%;
   all: unset;
   padding: 0.75rem;
   width: 100%;
+  color: black;
 }
 
 #input_group button {
@@ -1372,6 +1828,10 @@ top: 70%;
   #footer_content {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+  
+  .footer-list {
+    flex-direction: inherit;
   }
 }
 

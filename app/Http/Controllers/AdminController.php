@@ -1,3 +1,5 @@
+<?php
+
 public function edit($id)
 {
     $veiculo = Veiculo::findOrFail($id);

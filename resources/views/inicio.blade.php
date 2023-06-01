@@ -12,9 +12,10 @@
 <!-- ==========================================
     Start Banner -->
 
-<section class="banner">
+<section class="banner-section">
+    <div class="banner">
+    </div>
     <div class="line">
-
     </div>
 </section>
 <!-- ==========================================
@@ -25,7 +26,7 @@
 <section class="section-widget">
     <div class="car-widget-container">
         <div class="car-widget">
-            <a href="{{ ('veiculo') }}">
+            <a href="{{ 'veiculo' }}">
                 <img src="/img/cars/UnoEconomy.jpg" alt="Carro 1">
                 <div class="car-line"></div>
                 <h1>Fiat UNO </h1>
@@ -134,14 +135,10 @@
 
 <!-- ===========================================
     Start News -->
-
 <section class="news">
     <div class="text-news">
         <h2>Novidades</h2>
-        <p>Oportunidades únicas
-            <br>
-            que vendem rápido.
-        </p>
+        <p>Oportunidades únicas<br>que vendem rápido.</p>
     </div>
     <div class="car-news-container">
         <div class="car-news">
@@ -149,46 +146,78 @@
                 <img src="/img/cars/rallye.jpg" alt="Carro 1">
                 <div class="car-line"></div>
                 <h1>Wolksagen GOL</h1>
-                <p>1.6 RALLYE
-                    <br>
-                    Manual
-                </p>
+                <p>1.6 RALLYE<br>Manual</p>
                 <h2>R$ 29.000,00</h2>
                 <h3>2008 50.000km</h3>
             </a>
         </div>
 
         <div class="car-news">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/Prisma.jpg" alt="Carro 1">
+            <a href="caminho/para/carro2">
+                <img src="/img/cars/Prisma.jpg" alt="Carro 2">
                 <div class="car-line"></div>
                 <h1>Renault PRISMA</h1>
-                <p> 1.4 MAX
-                    <br>
-                    Manual
-                </p>
+                <p>1.4 MAX<br>Manual</p>
                 <h2>R$ 28.000,00</h2>
                 <h3>2011 50.000km</h3>
             </a>
         </div>
 
         <div class="car-news">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/Gol 1.0.jpg" alt="Carro 1">
+            <a href="caminho/para/carro3">
+                <img src="/img/cars/Gol 1.0.jpg" alt="Carro 3">
                 <div class="car-line"></div>
                 <h1>Wolksagen GOL</h1>
-                <p>1.0 TREND
-                    <br>
-                    Manual
-                </p>
+                <p>1.0 TREND<br>Manual</p>
                 <h2>R$ 33.000,00</h2>
                 <h3>2013 50.000km</h3>
             </a>
         </div>
+        <div class="buttons-widget">
+            <button class="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
     </div>
-
 </section>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const prevButton = document.querySelector(".prev-button");
+        const nextButton = document.querySelector(".next-button");
+        const carNewsContainer = document.querySelector(".car-news-container");
+        const carNewsItems = document.querySelectorAll(".car-news");
 
+        let currentIndex = 0;
+        const slideWidth = carNewsItems[0].offsetWidth;
+        const totalSlides = carNewsItems.length;
+
+        function goToSlide(index) {
+            carNewsContainer.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        function updateButtons() {
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === totalSlides - 1;
+        }
+
+        prevButton.addEventListener("click", function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                goToSlide(currentIndex);
+                updateButtons();
+            }
+        });
+
+        nextButton.addEventListener("click", function() {
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+                goToSlide(currentIndex);
+                updateButtons();
+            }
+        });
+
+        updateButtons();
+    });
+</script>
 <!-- ===========================================
         Final News-->
 
@@ -198,8 +227,8 @@
 <section class="testament">
     <h1>Relatos dos nossos clientes</h1>
     <div class="swiper mySwiper">
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next next-button"></div>
+        <div class="swiper-button-prev prev-button"></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="/img/depoiments/depoiment1.jpeg" alt="Carro 1"></div>
             <div class="swiper-slide"><img src="/img/depoiments/depoiment2.jpeg" alt="Carro 1"></div>
@@ -232,7 +261,7 @@
                 <h1>Quem Somos</h1>
                 <p>A Skina Veiculos surgiu de um sonho de criança, que foi construído com muita persistência e
                     concretizado com o apoio
-                    da esposa, filhos e toda a equipe Delta, que são uma família, e por isso, o nosso maior combustível
+                    da esposa, filhos e toda a equipe Skina, que são uma família, e por isso, o nosso maior combustível
                     é
                     realizar sonhos em forma de carros!</p>
 
@@ -279,12 +308,13 @@
 <!-- ===========================================
         Start Compre Conosco-->
 
-        <section class="compre">
-            <div>
-                <h1>Agora que já nos conhece vamos fazer negócio?</h1>
-            </div>
-                <button class="more-infos-compre"><i class="fa-brands fa-whatsapp"></i><span>Negociar pelo Whatsapp</span></button>
-        </section>
+<section class="compre">
+    <div>
+        <h1>Agora que já nos conhece vamos fazer negócio?</h1>
+    </div>
+    <button class="more-infos-compre"><i class="fa-brands fa-whatsapp"></i><span>Negociar pelo
+            Whatsapp</span></button>
+</section>
 
 <!-- ===========================================
         End Compre Conosco-->
@@ -292,78 +322,78 @@
 <!-- ===========================================
         Start Footer-->
 
-        <footer class="galaxy-footer">
-            <div id="footer_content">
-                <div id="footer_contacts">
-                    <h1>Skina Veiculos</h1>
-                    <p>It's all about your dreams.</p>
-        
-                    <div id="footer_social_media">
-                        <a href="#" class="footer-link" id="instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-        
-                        <a href="#" class="footer-link" id="facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-        
-                        <a href="#" class="footer-link" id="whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <ul class="footer-list">
-                    <li>
-                        <h3>Blog</h3>
-                    </li>
-                    <li>
-                        <a href="#" class="footer-link">Tech</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer-link">Adventures</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer-link">Music</a>
-                    </li>
-                </ul>
-        
-                <ul class="footer-list">
-                    <li>
-                        <h3>Products</h3>
-                    </li>
-                    <li>
-                        <a href="#" class="footer-link">App</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer-link">Desktop</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer-link">Cloud</a>
-                    </li>
-                </ul>
-        
-                <div id="footer_subscribe">
-                    <h3>Subscribe</h3>
-        
-                    <p>
-                        Enter your e-mail to get notified about
-                        our news solutions
-                    </p>
-        
-                    <div id="input_group">
-                        <input type="email" id="email">
-                        <button>
-                            <i class="fas fa-mail-bulk"></i>
-                        </button>
-                    </div>
-                </div>
+<footer class="galaxy-footer">
+    <div id="footer_content">
+        <div id="footer_contacts">
+            <h1>Skina Veiculos</h1>
+            <p>It's all about your dreams.</p>
+
+            <div id="footer_social_media">
+                <a href="#" class="footer-link" id="instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#" class="footer-link" id="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" class="footer-link" id="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
-        
-            <div id="footer_copyright">
-                &#169
-                2023 Todos os Direitos Reservados
+        </div>
+
+        <ul class="footer-list">
+            <li>
+                <h3>Blog</h3>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Tech</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Adventures</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Music</a>
+            </li>
+        </ul>
+
+        <ul class="footer-list">
+            <li>
+                <h3>Products</h3>
+            </li>
+            <li>
+                <a href="#" class="footer-link">App</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Desktop</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Cloud</a>
+            </li>
+        </ul>
+
+        <div id="footer_subscribe">
+            <h3>Subscribe</h3>
+
+            <p>
+                Enter your e-mail to get notified about
+                our news solutions
+            </p>
+
+            <div id="input_group">
+                <input type="email" id="email">
+                <button>
+                    <i class="fas fa-mail-bulk"></i>
+                </button>
             </div>
-        </footer>
+        </div>
+    </div>
+
+    <div id="footer_copyright">
+        &#169
+        2023 Todos os Direitos Reservados
+    </div>
+</footer>
 <!-- ===========================================
         End Footer-->

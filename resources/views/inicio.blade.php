@@ -25,102 +25,21 @@
     Start Content -->
 <section class="section-widget">
     <div class="car-widget-container">
+
+        @foreach ($veiculos as $veiculo)
         <div class="car-widget">
             <a href="{{ 'veiculo' }}">
-                <img src="/img/cars/UnoEconomy.jpg" alt="Carro 1">
+                <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($veiculo->imagens)) }}" alt="Carro 1">
                 <div class="car-line"></div>
-                <h1>Fiat UNO </h1>
-                <p>ECONOMY CELEBRATION
-                    <br>
-                    Manual
+                <h1>{{ $veiculo->marca->nome }} {{ $veiculo->modelo }} </h1>
+                <p>
+                    {{ $veiculo->sobre }}
                 </p>
-                <h2>R$ 50.000,00</h2>
-                <h3>2013 50.000km</h3>
+                <h2>R$ {{ number_format($veiculo->preco, 2) }}</h2>
+                <h3>{{ $veiculo->ano }} {{ number_format($veiculo->quilometragem) }}km</h3>
             </a>
         </div>
-        <div class="car-widget">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/Onix  1.0 (4).jpg" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>Chrevolet ONIX</h1>
-                <p>1.0 MPFI LT
-                    <br>
-                    Manual
-                </p>
-                <h2>R$ 47.000,00</h2>
-                <h3>2015 50.000km</h3>
-            </a>
-        </div>
-
-        <div class="car-widget">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/Duster.jpg" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>Renault DUSTER</h1>
-                <p>1.6 DYNAMIQUE 4X2
-                    <br>
-                    Manual
-                </p>
-                <h2>R$ 51.000,00</h2>
-                <h3>2014 50.000km</h3>
-            </a>
-        </div>
-
-        <div class="car-widget">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/Crossfox.jpg" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>Wolksagen CROSSFOX</h1>
-                <p>1.6 MI FLEX
-                    <br>
-                    Manual
-                </p>
-                <h2>R$ 30.000,00</h2>
-                <h3>2006 50.000km</h3>
-            </a>
-        </div>
-
-        <div class="car-widget">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/rallye.jpg" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>Wolksagen GOL</h1>
-                <p>1.6 RALLYE
-                    <br>
-                    Manual
-                </p>
-                <h2>R$ 29.000,00</h2>
-                <h3>2008 50.000km</h3>
-            </a>
-        </div>
-
-        <div class="car-widget">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/Prisma.jpg" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>Renault PRISMA</h1>
-                <p> 1.4 MAX
-                    <br>
-                    Manual
-                </p>
-                <h2>R$ 28.000,00</h2>
-                <h3>2011 50.000km</h3>
-            </a>
-        </div>
-
-        <div class="car-widget">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/Gol 1.0.jpg" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>Wolksagen GOL</h1>
-                <p>1.0 TREND
-                    <br>
-                    Manual
-                </p>
-                <h2>R$ 33.000,00</h2>
-                <h3>2013 50.000km</h3>
-            </a>
-        </div>
+        @endforeach
 
         <button class="more-cars-btn">
             <i class="fa-solid fa-circle-chevron-right custom-arrow"></i>
@@ -141,7 +60,21 @@
         <p>Oportunidades únicas<br>que vendem rápido.</p>
     </div>
     <div class="car-news-container">
+
+        @foreach($novidades as $novidade)
         <div class="car-news">
+            <a href="caminho/para/carro2">
+                <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($novidade->imagens)) }}" alt="Carro 2">
+                <div class="car-line"></div>
+                <h1>{{ $novidade->marca->nome }} {{ $novidade->modelo }}</h1>
+                <p>{{ $novidade->sobre }}</p>
+                <h2>R$ {{ number_format($novidade->preco, 2) }}</h2>
+                <h3>{{ $novidade->ano }} {{ number_format($novidade->quilometragem) }}km</h3>
+            </a>
+        </div>
+        @endforeach
+
+    {{--     <div class="car-news">
             <a href="caminho/para/carro1">
                 <img src="/img/cars/rallye.jpg" alt="Carro 1">
                 <div class="car-line"></div>
@@ -172,7 +105,7 @@
                 <h2>R$ 33.000,00</h2>
                 <h3>2013 50.000km</h3>
             </a>
-        </div>
+        </div> --}}
         <div class="buttons-widget">
             <button class="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
             <button class="next-button"><i class="fa-solid fa-chevron-right"></i></button>
@@ -297,7 +230,7 @@
         </div>
     </div>
     <div class="image-container">
-        <img class="image" src="/img/cars/rallye.jpg" alt="Imagem">
+        <img class="image" src="{{ Storage::url($imagemAleatoria) }}" alt="Imagem">
     </div>
 </section>
 

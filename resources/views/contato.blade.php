@@ -20,9 +20,6 @@
 </head>
 <body>
 
-
-<!-------------------------------TITULO COMECO---------------------------------------------------------------->
-
     <div class="contato_titulo_estilizacao">  
         <div class="contato_maps_flexbox">
             <div class="contato_texto_flexbox">    
@@ -60,9 +57,7 @@
 
         </div>
     </div>
-<!-------------------------------TITULO FINAL----------------------------------------------------------------->
 
-<!---------------------------FORMULARIO COMECO---------------------------------------------------------------->
         <div class="contato__container">
             <div class="contato_formulario_form">
                 <section class="contato_contact_form">
@@ -93,7 +88,6 @@
                 </section>
             </div>
         </div>
-<!---------------------------FORMULARIO FINAL----------------------------------------------------------------->
 
 </body>
 </html>

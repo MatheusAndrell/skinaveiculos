@@ -1842,3 +1842,128 @@ top: 70%;
   }
 }
 
+/* ----------------------------------------------
+
+    Contato
+
+------------------------------------------------*/
+
+.contato_titulo_estilizacao {
+  font-family: Arial, sans-serif;
+  color: var(--cor-branca);
+  background-color: var(--cor-primaria);
+  margin: 100px 0 0 0;
+  padding: 30px;
+  }
+
+.contato__titulo {
+  font-size: 50px;
+  font-family: "Oswald", Sans-serif;
+  }
+
+.contato_titulo_descricao {
+  font-size: 16px;
+  margin-bottom: 20px;
+  }
+
+.contato_dados_contato {
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  }
+
+li {
+  margin-bottom: 10px;
+  }
+
+li:last-child {
+  margin-bottom: 0;
+  }
+
+  .contato_formulario_form {
+      margin: 40px;
+      font-size: 20px;
+      font-family: "Oswald", Sans-serif;
+      width: 100%;
+  }
+  
+  
+  .contato__form-group {
+      margin-bottom: 15px;
+  }
+  
+  label {
+      display: block;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="telefone"],
+    textarea {
+      width: 100%;
+      max-width: 300px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #555;
+    }
+  
+  .contato_contactform_descricao {
+      font-size: 25px;
+      font-family: "Oswald", Sans-serif;
+      padding-bottom: 20px;
+  }
+  
+  .contato__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0 0 600px;
+  }
+
+  .contato_mapa_localizacao {
+      width: 100%;
+  }
+  
+  @media screen and (max-width: 600px) {
+  .contato__container {
+      flex-direction: column;
+  }
+  }
+
+
+.contato_redessociais_descricao {
+  font-family: "Oswald", Sans-serif;
+  font-size: 20px;
+}
+
+.contato_redessociais_posicionamento {
+  display: flex;
+  align-items: center;
+}
+
+.contato_maps_flexbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 300px;
+  padding: 20px;
+  margin: 0 0 0 130px;
+}

@@ -91,3 +91,65 @@
 
 </body>
 </html>
+<!-- ===========================================
+        End Compre Conosco-->
+
+<!-- ===========================================
+        Start Footer-->
+
+        <footer class="galaxy-footer">
+            <div id="footer_content">
+                <div id="footer_contacts">
+                    <h1>Skina Veiculos</h1>
+                    <p>It's all about your dreams.</p>
+        
+                    <div id="footer_social_media">
+                        <a href="#" class="footer-link" id="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+        
+                        <a href="#" class="footer-link" id="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+        
+                        <a href="#" class="footer-link" id="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <ul class="footer-list">
+                        <h3>Endereço: Rua Frei Caneca 236, Três Pontas, MG, Brazil</h3>
+                </ul>
+        
+                <ul class="footer-list">
+                    <li>
+                        <h3>Segunda a Sexta-feira: 09:00 - 18:00
+                            <br>
+                            Sábado: 09:00 - 12:00</h3>
+                    </li>
+                </ul>
+                <div id="footer_subscribe">
+                    <h3>Subscribe</h3>
+        
+                    <p>
+                        Envie sua mensagem para nós
+                    </p>
+        
+                    <div id="input_group">
+                        <input type="email" id="email">
+                        <button>
+                            <i class="fas fa-mail-bulk"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="footer_copyright">
+                &#169
+                2023 Todos os Direitos Reservados
+            </div>
+        </footer>
+        <!-- ===========================================
+                End Footer-->
+        

@@ -28,7 +28,7 @@
 
         @foreach ($veiculos as $veiculo)
         <div class="car-widget">
-            <a href="{{ 'veiculo' }}">
+            <a href="{{ route('visualizar', ['slug' => $veiculo->slug]) }}">
                 <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($veiculo->imagens)) }}" alt="Carro 1">
                 <div class="car-line"></div>
                 <h1>{{ $veiculo->marca->nome }} {{ $veiculo->modelo }} </h1>
@@ -41,11 +41,12 @@
         </div>
         @endforeach
 
-        <button class="more-cars-btn">
-            <i class="fa-solid fa-circle-chevron-right custom-arrow"></i>
-            <span>Ver mais carros</span>
-        </button>
 
+            <a href="{{ route('venda-carro') }}" class="more-cars-btn">
+              <i class="fa-solid fa-circle-chevron-right custom-arrow"></i>
+              <span>Ver mais carros</span>
+            </a>
+          </a>
     </div>
 </section>
 
@@ -59,8 +60,11 @@
         <h2>Novidades</h2>
         <p>Oportunidades únicas<br>que vendem rápido.</p>
     </div>
+    <div class="buttons-widget">
+        <button class="prev-buttonn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="next-buttonn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
     <div class="car-news-container">
-
         @foreach($novidades as $novidade)
         <div class="car-news">
             <a href="caminho/para/carro2">
@@ -73,84 +77,8 @@
             </a>
         </div>
         @endforeach
-
-    {{--     <div class="car-news">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/rallye.jpg" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>Wolksagen GOL</h1>
-                <p>1.6 RALLYE<br>Manual</p>
-                <h2>R$ 29.000,00</h2>
-                <h3>2008 50.000km</h3>
-            </a>
-        </div>
-
-        <div class="car-news">
-            <a href="caminho/para/carro2">
-                <img src="/img/cars/Prisma.jpg" alt="Carro 2">
-                <div class="car-line"></div>
-                <h1>Renault PRISMA</h1>
-                <p>1.4 MAX<br>Manual</p>
-                <h2>R$ 28.000,00</h2>
-                <h3>2011 50.000km</h3>
-            </a>
-        </div>
-
-        <div class="car-news">
-            <a href="caminho/para/carro3">
-                <img src="/img/cars/Gol 1.0.jpg" alt="Carro 3">
-                <div class="car-line"></div>
-                <h1>Wolksagen GOL</h1>
-                <p>1.0 TREND<br>Manual</p>
-                <h2>R$ 33.000,00</h2>
-                <h3>2013 50.000km</h3>
-            </a>
-        </div> --}}
-        <div class="buttons-widget">
-            <button class="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="next-button"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
     </div>
 </section>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const prevButton = document.querySelector(".prev-button");
-        const nextButton = document.querySelector(".next-button");
-        const carNewsContainer = document.querySelector(".car-news-container");
-        const carNewsItems = document.querySelectorAll(".car-news");
-
-        let currentIndex = 0;
-        const slideWidth = carNewsItems[0].offsetWidth;
-        const totalSlides = carNewsItems.length;
-
-        function goToSlide(index) {
-            carNewsContainer.style.transform = `translateX(-${index * slideWidth}px)`;
-        }
-
-        function updateButtons() {
-            prevButton.disabled = currentIndex === 0;
-            nextButton.disabled = currentIndex === totalSlides - 1;
-        }
-
-        prevButton.addEventListener("click", function() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                goToSlide(currentIndex);
-                updateButtons();
-            }
-        });
-
-        nextButton.addEventListener("click", function() {
-            if (currentIndex < totalSlides - 1) {
-                currentIndex++;
-                goToSlide(currentIndex);
-                updateButtons();
-            }
-        });
-
-        updateButtons();
-    });
-</script>
 <!-- ===========================================
         Final News-->
 
@@ -254,79 +182,58 @@
 
 <!-- ===========================================
         Start Footer-->
-
-<footer class="galaxy-footer">
-    <div id="footer_content">
-        <div id="footer_contacts">
-            <h1>Skina Veiculos</h1>
-            <p>It's all about your dreams.</p>
-
-            <div id="footer_social_media">
-                <a href="#" class="footer-link" id="instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-                <a href="#" class="footer-link" id="facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-
-                <a href="#" class="footer-link" id="whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+        <footer class="galaxy-footer">
+            <div id="footer_content">
+                <div id="footer_contacts">
+                    <h1>Skina Veiculos</h1>
+                    <p>It's all about your dreams.</p>
+        
+                    <div id="footer_social_media">
+                        <a href="#" class="footer-link" id="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+        
+                        <a href="#" class="footer-link" id="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+        
+                        <a href="#" class="footer-link" id="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <ul class="footer-list">
+                        <h3>Endereço: Rua Frei Caneca 236, Três Pontas, MG, Brazil</h3>
+                </ul>
+        
+                <ul class="footer-list">
+                    <li>
+                        <h3>Segunda a Sexta-feira: 09:00 - 18:00
+                            <br>
+                            Sábado: 09:00 - 12:00</h3>
+                    </li>
+                </ul>
+                <div id="footer_subscribe">
+                    <h3>Subscribe</h3>
+        
+                    <p>
+                        Envie sua mensagem para nós
+                    </p>
+        
+                    <div id="input_group">
+                        <input type="email" id="email">
+                        <button>
+                            <i class="fas fa-mail-bulk"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <ul class="footer-list">
-            <li>
-                <h3>Blog</h3>
-            </li>
-            <li>
-                <a href="#" class="footer-link">Tech</a>
-            </li>
-            <li>
-                <a href="#" class="footer-link">Adventures</a>
-            </li>
-            <li>
-                <a href="#" class="footer-link">Music</a>
-            </li>
-        </ul>
-
-        <ul class="footer-list">
-            <li>
-                <h3>Products</h3>
-            </li>
-            <li>
-                <a href="#" class="footer-link">App</a>
-            </li>
-            <li>
-                <a href="#" class="footer-link">Desktop</a>
-            </li>
-            <li>
-                <a href="#" class="footer-link">Cloud</a>
-            </li>
-        </ul>
-
-        <div id="footer_subscribe">
-            <h3>Subscribe</h3>
-
-            <p>
-                Enter your e-mail to get notified about
-                our news solutions
-            </p>
-
-            <div id="input_group">
-                <input type="email" id="email">
-                <button>
-                    <i class="fas fa-mail-bulk"></i>
-                </button>
+        
+            <div id="footer_copyright">
+                &#169
+                2023 Todos os Direitos Reservados
             </div>
-        </div>
-    </div>
-
-    <div id="footer_copyright">
-        &#169
-        2023 Todos os Direitos Reservados
-    </div>
-</footer>
+        </footer>
 <!-- ===========================================
         End Footer-->

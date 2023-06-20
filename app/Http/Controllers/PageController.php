@@ -29,4 +29,16 @@ class PageController extends Controller
 
         return view('inicio', compact('veiculos', 'novidades', 'imagemAleatoria'));
     }
+
+    public function visualizar($slug)
+    {
+        $veiculo = Veiculo::with(['marca', 'tipo', 'funcoes', 'funcoes.funcao', 'imagens'])->where('slug', $slug)->first();
+
+        if(!$veiculo)
+            return abort(404);
+
+            $imagemAleatoria = Imagem::all()->random()->url; 
+        return view('veiculo', compact('veiculo', 'imagemAleatoria'));
+    }
+
 }

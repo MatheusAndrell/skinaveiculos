@@ -164,7 +164,7 @@ span {
   display: none;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .nav-bar {
       padding-top: 20px;
       padding-bottom: 60px;
@@ -271,7 +271,7 @@ span {
   top: 100%;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .banner {
     display: none;
   }
@@ -412,7 +412,7 @@ span {
   transform: translateY(-10px);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .car-widget {
     width: 100%;
   }
@@ -536,7 +536,7 @@ span {
 
 .car-news h3 {
   position: relative;
-  top: 17%;
+  top: 25%;
   text-align: center;
   color: black;
   font-size: 15px;
@@ -554,35 +554,20 @@ span {
   display: none;
 }
 
-.prev-button,
-.next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: var(--cor-branca);
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.prev-button:hover,
-.next-button:hover {
+.prev-buttonn:hover,
+.next-buttonn:hover {
   color: #ccc;
 }
 
-.prev-button {
-  left: 10px;
+.prev-buttonn {
+  left: 30px;
 }
 
-.next-button {
-  right: 10px;
+.next-buttonn {
+  right: 30px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .text-news {
     top: 0;
   }
@@ -598,6 +583,27 @@ span {
   .news {
     padding: 50px;
   }
+  
+  .text-news p {
+    text-align: center;
+    margin: 13px 0px 10px -50px;
+  }
+  
+  .prev-buttonn,
+  .next-buttonn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--cor-branca);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 9999;
+}
 }
 
 /* ----------------------------------------------
@@ -658,7 +664,7 @@ span {
   transition: opacity 1s ease;
 }
 
-@media (max-width: 991px) { 
+@media (max-width: 767px) { 
   .next-button,
   .prev-button {
     top: 34vh !important;
@@ -750,7 +756,7 @@ span {
   border: 0;
 }
 
-@media (max-width: 991px) { 
+@media (max-width: 767px) { 
   .maps {
     display: none;
   }
@@ -850,7 +856,7 @@ span {
   border-radius: 5px;
 }
 
-@media (max-width: 991px) { 
+@media (max-width: 767px) { 
   .venda {
     height: 150vh;
     display: grid;
@@ -932,7 +938,7 @@ span {
   margin-right: 10px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
    
   .compre h1 {
     margin: 0px 1% 0 1%;
@@ -949,68 +955,12 @@ span {
 
 /* ----------------------------------------------
 
-    Filter Estoque
-
-------------------------------------------------*/
-
-.section-filtragem {
-  position: relative;
-  top: 390px;
-  margin: -200px 80px 0;
-}
-
-.filter {
-  padding: 0px;
-  display: table;
-}
-
-.item {
-  margin: 15px;
-}
-
-.item input {
-  padding: 10px 0px 10px 10px;
-  border-width: 1px 1px 1px 1px;
-  border-color: black;
-  width: 75%;
-  border-radius: 4px;
-}
-
-.item ::placeholder {
- color: black; 
-}
-
-.item select {
-  padding: 10px 0px 10px 10px;
-  width: 100%;
-  border-radius: 4px;;
-  border-width: 1px 1px 1px 1px;
-  border-color: black;
-
-}
-
-.item button {
-  padding: 10px 15px 10px 15px;
-  border: none;
-  background: linear-gradient(140deg, var(--cor-primaria) 0%, var(--buton-color5) 100%);
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-
-.item button:hover {
-  filter: brightness(70%);
-}
-
-/* ----------------------------------------------
-
     Card Cars Estoque
 
 ------------------------------------------------*/
 .section-widget-estoque {
   height: 180vh;
-  margin: 0vh 10vh 0 53vh;
+  margin: 30vh 10vh 0 10vh;
   position: relative;
   z-index: 1;
 }
@@ -1085,7 +1035,7 @@ span {
 
 .car-widget-venda h3 {
   position: relative;
-  top: 34%;
+  top: 20%;
   text-align: center;
   color: black;
   font-size: 15px;
@@ -1161,13 +1111,14 @@ span {
   display: flex;
   position: relative;
   top: 14%;
-  height: 50%;
+  height: 70%;
+  background-color: #e4e4e4;
 }
 
 .image-section img {
   width: 100%;
-  height: auto;
-  background-color: red;
+  height: 100%;
+  background-size: cover;
 }
 
 /* ----------------------------------------------
@@ -1659,7 +1610,7 @@ span {
 
 /* responsive */
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .contato {
     margin-top: 60px;
   }
@@ -1697,6 +1648,12 @@ top: 70%;
 .footer-galaxy {
   width: 100%;
   color: #ffffff;
+}
+
+.footer-venda {
+  width: 100%;
+  position: relative;
+  top: 70%;
 }
 
 .footer-link {
@@ -1758,10 +1715,15 @@ top: 70%;
 
 .footer-list {
   display: flex;
-  flex-direction: column;
   gap: 0.75rem;
   list-style: none;
   color: white;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 20px;
 }
 
 .footer-list .footer-link {
@@ -1966,4 +1928,59 @@ li:last-child {
   gap: 300px;
   padding: 20px;
   margin: 0 0 0 130px;
+}
+
+/* ----------------------------------------------
+
+    Sobre Nos
+
+------------------------------------------------*/
+
+.content-sobrenos {
+  margin-top: 100px;
+  .content-sobrenos {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .content-sobrenos > div {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.2225%;
+    padding-bottom: 0;
+    box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+    margin-top: 1.6em;
+    margin-bottom: 0.9em;
+    overflow: hidden;
+    border-radius: 8px;
+    will-change: transform;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .content-sobrenos iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .content-sobrenos a {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  
+ 
 }

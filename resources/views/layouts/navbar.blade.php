@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
 
     <link rel="stylesheet" href="/css/frontend.css">
+    <script src="/js/button.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
@@ -30,7 +31,7 @@
             </label>
             <img src="/img/skina/skina-m.png" alt="Logo da Skina" class="logo">
             <ul class="nav-menu">
-                <li><a href="{{ route('inicio') }}">Início</a></li>
+                <li><a href="{{ route('home') }}">Início</a></li>
                 <li><a href="{{ route('venda-carro') }}">Estoque</a></li>
                 <li><a href="{{ route('sobre-nos') }}">Sobre nós</a></li>
                 <li><a href="{{ route('contato') }}">Contato</a></li>

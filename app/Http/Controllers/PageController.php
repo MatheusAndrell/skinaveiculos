@@ -41,4 +41,12 @@ class PageController extends Controller
         return view('veiculo', compact('veiculo', 'imagemAleatoria'));
     }
 
+    public function estoque()
+    {
+        $veiculos = Veiculo::with(['marca:id,nome', 'imagens'])
+            ->get();
+
+        return view('estoque', compact('veiculos'));
+    }
+
 }

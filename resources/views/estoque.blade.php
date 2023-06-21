@@ -16,37 +16,25 @@
 
 <!-- ===========================================
     Start Content -->
-<section class="section-widget-estoque">
-    <div class="car-widget-container">
-        <div class="car-widget-venda">
-            <a href="caminho/para/carro1">
-                <img src="/img/cars/UnoEconomy.jpg" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>Fiat UNO </h1>
-                <p>ECONOMY CELEBRATION
-                    <br>
-                    Manual
-                </p>
-                <h2>R$ 50.000,00</h2>
-                <h3>2013 50.000km</h3>
-            </a>
+    <section class="section-widget-estoque">
+        <div class="car-widget-container">
+            @foreach ($veiculos as $veiculo)
+            <div class="car-widget-venda">
+                <a href="{{ route('visualizar', ['slug' => $veiculo->slug]) }}">
+                    <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($veiculo->imagens)) }}" alt="Carro 1">
+                    <div class="car-line"></div>
+                    <h1>{{ $veiculo->marca->nome }} {{ $veiculo->modelo }} </h1>
+                    <p>
+                        {{ $veiculo->sobre }}
+                    </p>
+                    <h2>R$ {{ number_format($veiculo->preco, 2) }}</h2>
+                    <h3>{{ $veiculo->ano }} {{ number_format($veiculo->quilometragem) }}km</h3>
+                </a>
+            </div>
+            @endforeach
         </div>
-</section>
-
-{{-- @foreach ($veiculos as $veiculo)
-<div class="car-widget-venda">
-    <a href="{{ route('visualizar', ['slug' => $veiculo->slug]) }}">
-        <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($veiculo->imagens)) }}" alt="Carro 1">
-        <div class="car-line"></div>
-        <h1>{{ $veiculo->marca->nome }} {{ $veiculo->modelo }} </h1>
-        <p>
-            {{ $veiculo->sobre }}
-        </p>
-        <h2>R$ {{ number_format($veiculo->preco, 2) }}</h2>
-        <h3>{{ $veiculo->ano }} {{ number_format($veiculo->quilometragem) }}km</h3>
-    </a>
-</div>
-@endforeach --}}
+    </section>
+    
 <!-- ===========================================
         Start Compre Conosco Estoque-->
 

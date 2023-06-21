@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index']) ->name('home');
 
-Route::get('/venda-carro', function () {
-    return view('venda-carro');
-})->name('venda-carro');
+
+Route::get('/estoque', [PageController::class, 'estoque']) ->name('estoque');
 
 Route::get('visualizar/{slug}', [PageController::class, 'visualizar'])->name('visualizar');
 

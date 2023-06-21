@@ -27,26 +27,26 @@
     <div class="car-widget-container">
 
         @foreach ($veiculos as $veiculo)
-        <div class="car-widget">
-            <a href="{{ route('visualizar', ['slug' => $veiculo->slug]) }}">
-                <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($veiculo->imagens)) }}" alt="Carro 1">
-                <div class="car-line"></div>
-                <h1>{{ $veiculo->marca->nome }} {{ $veiculo->modelo }} </h1>
-                <p>
-                    {{ $veiculo->sobre }}
-                </p>
-                <h2>R$ {{ number_format($veiculo->preco, 2) }}</h2>
-                <h3>{{ $veiculo->ano }} {{ number_format($veiculo->quilometragem) }}km</h3>
-            </a>
-        </div>
+            <div class="car-widget">
+                <a href="{{ route('visualizar', ['slug' => $veiculo->slug]) }}">
+                    <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($veiculo->imagens)) }}" alt="Carro 1">
+                    <div class="car-line"></div>
+                    <h1>{{ $veiculo->marca->nome }} {{ $veiculo->modelo }} </h1>
+                    <p>
+                        {{ $veiculo->sobre }}
+                    </p>
+                    <h2>R$ {{ number_format($veiculo->preco, 2) }}</h2>
+                    <h3>{{ $veiculo->ano }} {{ number_format($veiculo->quilometragem) }}km</h3>
+                </a>
+            </div>
         @endforeach
 
 
-            <a href="{{ route('venda-carro') }}" class="more-cars-btn">
-              <i class="fa-solid fa-circle-chevron-right custom-arrow"></i>
-              <span>Ver mais carros</span>
-            </a>
-          </a>
+        <a href="{{ route('estoque') }}" class="more-cars-btn">
+            <i class="fa-solid fa-circle-chevron-right custom-arrow"></i>
+            <span>Ver mais carros</span>
+        </a>
+        </a>
     </div>
 </section>
 
@@ -65,17 +65,17 @@
         <button class="next-buttonn"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
     <div class="car-news-container">
-        @foreach($novidades as $novidade)
-        <div class="car-news">
-            <a href="caminho/para/carro2">
-                <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($novidade->imagens)) }}" alt="Carro 2">
-                <div class="car-line"></div>
-                <h1>{{ $novidade->marca->nome }} {{ $novidade->modelo }}</h1>
-                <p>{{ $novidade->sobre }}</p>
-                <h2>R$ {{ number_format($novidade->preco, 2) }}</h2>
-                <h3>{{ $novidade->ano }} {{ number_format($novidade->quilometragem) }}km</h3>
-            </a>
-        </div>
+        @foreach ($novidades as $novidade)
+            <div class="car-news">
+                <a href="{{ route('visualizar', ['slug' => $veiculo->slug]) }}">
+                    <img src="{{ Storage::url(App\Helpers\ImagemHelper::get($novidade->imagens)) }}" alt="Carro 2">
+                    <div class="car-line"></div>
+                    <h1>{{ $novidade->marca->nome }} {{ $novidade->modelo }}</h1>
+                    <p>{{ $novidade->sobre }}</p>
+                    <h2>R$ {{ number_format($novidade->preco, 2) }}</h2>
+                    <h3>{{ $novidade->ano }} {{ number_format($novidade->quilometragem) }}km</h3>
+                </a>
+            </div>
         @endforeach
     </div>
 </section>
@@ -126,7 +126,8 @@
                     é
                     realizar sonhos em forma de carros!</p>
 
-                <button class="more-infos"><span>Saiba mais<i class="fa-solid fa-chevron-right"></i></span></button>
+                <a href="{{ route('sobre-nos') }}"><button class="more-infos"><span>Saiba mais<i
+                                class="fa-solid fa-chevron-right"></i></span></button></a>
             </div>
             <div class="map-container">
                 <iframe class="maps"
@@ -153,7 +154,7 @@
                 <h1>VENDA SEU CARRO DE FORMA RÁPIDA.</h1>
                 <p>Receba uma proposta da nossa equipe em seu carro.
                     Analisamos seu usado em minutos com a melhor avaliação do mercado.</p>
-                <button class="more-infos-venda"><span>Saiba mais<i class="fa-solid fa-car"></i></span></button>
+                    <a href="{{ route('contato') }}"><button class="more-infos-venda"><span>Saiba mais<i class="fa-solid fa-car"></i></span></button></a>
             </div>
         </div>
     </div>
@@ -182,58 +183,59 @@
 
 <!-- ===========================================
         Start Footer-->
-        <footer class="galaxy-footer">
-            <div id="footer_content">
-                <div id="footer_contacts">
-                    <h1>Skina Veiculos</h1>
-                    <p>It's all about your dreams.</p>
-        
-                    <div id="footer_social_media">
-                        <a href="#" class="footer-link" id="instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-        
-                        <a href="#" class="footer-link" id="facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-        
-                        <a href="#" class="footer-link" id="whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-        
-                <ul class="footer-list">
-                        <h3>Endereço: Rua Frei Caneca 236, Três Pontas, MG, Brazil</h3>
-                </ul>
-        
-                <ul class="footer-list">
-                    <li>
-                        <h3>Segunda a Sexta-feira: 09:00 - 18:00
-                            <br>
-                            Sábado: 09:00 - 12:00</h3>
-                    </li>
-                </ul>
-                <div id="footer_subscribe">
-                    <h3>Subscribe</h3>
-        
-                    <p>
-                        Envie sua mensagem para nós
-                    </p>
-        
-                    <div id="input_group">
-                        <input type="email" id="email">
-                        <button>
-                            <i class="fas fa-mail-bulk"></i>
-                        </button>
-                    </div>
-                </div>
+<footer class="galaxy-footer">
+    <div id="footer_content">
+        <div id="footer_contacts">
+            <h1>Skina Veiculos</h1>
+            <p>It's all about your dreams.</p>
+
+            <div id="footer_social_media">
+                <a href="#" class="footer-link" id="instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#" class="footer-link" id="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" class="footer-link" id="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
-        
-            <div id="footer_copyright">
-                &#169
-                2023 Todos os Direitos Reservados
+        </div>
+
+        <ul class="footer-list">
+            <h3>Endereço: Rua Frei Caneca 236, Três Pontas, MG, Brazil</h3>
+        </ul>
+
+        <ul class="footer-list">
+            <li>
+                <h3>Segunda a Sexta-feira: 09:00 - 18:00
+                    <br>
+                    Sábado: 09:00 - 12:00
+                </h3>
+            </li>
+        </ul>
+        <div id="footer_subscribe">
+            <h3>Subscribe</h3>
+
+            <p>
+                Envie sua mensagem para nós
+            </p>
+
+            <div id="input_group">
+                <input type="email" id="email">
+                <button>
+                    <i class="fas fa-mail-bulk"></i>
+                </button>
             </div>
-        </footer>
+        </div>
+    </div>
+
+    <div id="footer_copyright">
+        &#169
+        2023 Todos os Direitos Reservados
+    </div>
+</footer>
 <!-- ===========================================
         End Footer-->

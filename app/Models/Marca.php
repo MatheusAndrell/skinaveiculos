@@ -13,4 +13,8 @@ class Marca extends Model
         'nome'
     ];
 
+    public function imagem()
+    {
+        return $this->morphOne(Imagem::class, 'imageable');
+    }
 }

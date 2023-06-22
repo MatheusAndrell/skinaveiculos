@@ -154,7 +154,7 @@
                 <h1>VENDA SEU CARRO DE FORMA RÁPIDA.</h1>
                 <p>Receba uma proposta da nossa equipe em seu carro.
                     Analisamos seu usado em minutos com a melhor avaliação do mercado.</p>
-                    <a href="{{ route('contato') }}"><button class="more-infos-venda"><span>Saiba mais<i class="fa-solid fa-car"></i></span></button></a>
+                    <a href="{{ route('contato.index') }}"><button class="more-infos-venda"><span>Saiba mais<i class="fa-solid fa-car"></i></span></button></a>
             </div>
         </div>
     </div>

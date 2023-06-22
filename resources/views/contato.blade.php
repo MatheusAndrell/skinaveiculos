@@ -60,27 +60,50 @@
 
         <div class="contato__container">
             <div class="contato_formulario_form">
-                <section class="contato_contact_form">
+
+                
+                <section class="contato_contact_form" id="contato_form">
                     <h1 class="contato_contactform_descricao">Entre em contato</h1>
-                        <form action="enviar.php" method="POST">
+                    
+                    @if($errors->any())
+                    <div id="alert" class="alert" style="margin-bottom: 1.3rem;">
+                        <ul style="list-style-type: circle; color: #721c24">
+                            @foreach($errors->all() as $error)
+                            <li style="font-size: 18px; !important">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+                    @if(Session::has('success'))
+                        <span style="color: #155724; font-size: 18px; !important; margin-bottom: 1.3rem; ">{{ Session::get('success') }}</span>
+                    @endif
+
+                    @if(Session::has('error'))
+                    <span style="color: #721c24; font-size: 18px; !important; margin-bottom: 1.3rem; ">{{ Session::get('error') }}</span>
+                    @endif
+
+                        <form action="{{ route('contato.store') }}" method="POST">
+                                @csrf
+
                                 <div class="contato__form-group">
                                     <label for="nome">Nome:</label>
-                                    <input type="text" id="nome" name="nome" required>
+                                    <input type="text" id="nome" name="nome" value="{{ old('nome') }}" required>
                                 </div>
          
                                 <div class="contato__form-group">
                                     <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" required>
+                                    <input type="email" id="email" name="email" value="{{ old('email') }}" required>
                                 </div>
                   
                                 <div class="contato__form-group">
                                     <label for="telefone">Telefone:</label>
-                                    <input type="telefone" id="telefone" name="telefone" required>
+                                    <input type="telefone" id="telefone" value="{{ old('telefone') }}" name="telefone" required>
                                 </div>
                   
                                 <div class="contato__form-group">
                                     <label for="mensagem">Mensagem:</label>
-                                    <textarea id="mensagem" name="mensagem" rows="3" required></textarea>
+                                    <textarea id="mensagem" name="mensagem" value="{{ old('mensagem') }}" rows="3" required></textarea>
                                 </div>
                   
                                 <input type="submit" value="Enviar">
@@ -90,6 +113,10 @@
         </div>
 
 </body>
+
+<script>
+    
+</script>
 </html>
 <!-- ===========================================
         End Compre Conosco-->

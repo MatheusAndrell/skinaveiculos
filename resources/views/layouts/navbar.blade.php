@@ -34,7 +34,7 @@
                 <li><a href="{{ route('home') }}">Início</a></li>
                 <li><a href="{{ route('estoque') }}">Estoque</a></li>
                 <li><a href="{{ route('sobre-nos') }}">Sobre nós</a></li>
-                <li><a href="{{ route('contato') }}">Contato</a></li>
+                <li><a href="{{ route('contato.index') }}">Contato</a></li>
                 
             </ul>
             <button class="atendimento" type="button"><i class="fa-brands fa-whatsapp whatsapp"></i>Atendimento</button>
